@@ -1,5 +1,8 @@
 {% extends 'layout.html' %}
 
+{% block scripts %}
+{% endblock scripts %}
+
 {% block content %}
 <div class="container pt-5 col-lg-4 col-md-6 rounded">
     <div class="content-section">
@@ -7,27 +10,8 @@
             {{ form.hidden_tag() }}
             <fieldset class="form-group">
                 <legend class="border-bottom mb-4">Sign Up</legend>
-                <div class="row">
-                    <div class="col-sm">
-                        <div class="form-group">
-                            {{ form.username.label(class="form-control-label") }}
-
-                            {% if form.username.errors %}
-                                {{ form.username(class="form-control form-control-lg is-invalid") }}
-                                <div class="invalid-feedback">
-                                    {% for error in form.username.errors %}
-                                        <span>{{ error }}</span>
-                                    {% endfor %}
-                                </div>
-                            {% else %}
-                                {{ form.username(class="form-control form-control-lg") }}
-                            {% endif %}
-                        </div>
-                    </div>
-                    <div class="col-sm">
                         <div class="form-group">
                             {{ form.teamname.label(class="form-control-label") }}
-
                             {% if form.teamname.errors %}
                                 {{ form.teamname(class="form-control form-control-lg is-invalid") }}
                                 <div class="invalid-feedback">
@@ -39,11 +23,8 @@
                                 {{ form.teamname(class="form-control form-control-lg") }}
                             {% endif %}
                         </div>
-                    </div>
-                </div>
                 <div class="form-group">
                     {{ form.teamCaptain.label(class="form-control-label") }}
-
                     {% if form.teamCaptain.errors %}
                         {{ form.teamCaptain(class="form-control form-control-lg is-invalid") }}
                         <div class="invalid-feedback">
@@ -56,6 +37,19 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
+                            {{ form.teamSize.label(class="form-control-label") }}
+                            {% if form.teamSize.errors %}
+                                {{ form.teamSize(class="form-control form-control-lg is-invalid", id="teamSize") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.teamSize.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                    {{ form.teamSize(class="form-control form-control-lg", id="teamSize") }}
+                    {% endif %}
+                </div>
+                <div class="form-group" id="team1">
                     {{ form.teamMember_1.label(class="form-control-label") }}
                     {% if form.teamMember_1.errors %}
                         {{ form.teamMember_1(class="form-control form-control-lg is-invalid") }}
@@ -68,7 +62,7 @@
                         {{ form.teamMember_1(class="form-control form-control-lg") }}
                     {% endif %}
                 </div>
-                <div class="form-group">
+                <div class="form-group" id="team2">
                     {{ form.teamMember_2.label(class="form-control-label") }}
                     {% if form.teamMember_2.errors %}
                         {{ form.teamMember_2(class="form-control form-control-lg is-invalid") }}
@@ -95,19 +89,6 @@
                     {% endif %}
                 </div>
                 <div class="form-group">
-                    {{ form.member.label(class="form-control-label") }}
-                    {% if form.member.errors %}
-                        {{ form.member(class="form-control form-control-lg is-invalid") }}
-                        <div class="invalid-feedback">
-                            {% for error in form.member.errors %}
-                                <span>{{ error }}</span>
-                            {% endfor %}
-                        </div>
-                    {% else %}
-                        {{ form.member(class="form-control form-control-lg") }}
-                    {% endif %}
-                </div>
-                <div class="form-group">
                         {{ form.recaptcha(class="form-control form-control-lg") }}
                 </div>
             </fieldset>
@@ -122,4 +103,4 @@
         </small>
     </div>
 </div>
-{% endblock %}
+{% endblock content%}
