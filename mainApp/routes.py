@@ -4,7 +4,7 @@ from mainApp.forms import RegistrationForm
 from mainApp import app
 
 
-@app.route("/register", methods=['GET', "POST"])
+@app.route("/", methods=['GET', "POST"])
 def register():
     form = RegistrationForm()
     if form.validate_on_submit():
