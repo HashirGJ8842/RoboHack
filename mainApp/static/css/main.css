@@ -768,3 +768,20 @@ input {
     padding-bottom: 50px;
   }
 }
+
+.jumbotron {
+   /*background: rgb(200, 54, 54);  This is for ie8 and below */
+   background: rgba(200, 54, 54, 0.2); 
+}solid
+
+canvas {
+  display: block;
+  vertical-align: bottom;
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #00356B;
+}
