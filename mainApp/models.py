@@ -2,11 +2,16 @@ from mainApp import db
 from datetime import datetime
 
 
-class User(db.Model):
+class Team(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password = db.Column(db.String(60), nullable=False)
+    teamName = db.Column(db.String(20), unique=True, nullable=False)
+    teamCaptain = db.Column(db.String(20), nullable=False)
+    teamMember_1 = db.Column(db.String(20))
+    teamMember_2 = db.Column(db.String(20))
+    type = db.Column(db.String(8), nullable=False)
+    themeM = db.Column(db.String(20), nullable=False)
+    themeS = db.Column(db.String(20), nullable=False)
+    themeE = db.Column(db.String(20), nullable=False)
 
     def __repr__(self):
-        return f"User('{self.username}', '{self.email}')"
+        return f"User('{self.teamName}', '{self.type}')"

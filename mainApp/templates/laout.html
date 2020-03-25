@@ -84,12 +84,22 @@
 
         <br />
         <br/>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+                {% if messages %}
+                    {% for category, message in messages %}
+                        <div class="alert alert-{{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
             <div class="card card-5">
                 <div class="card-heading">
                     <h2 class="title">Event Registration Form</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST">
+                        {{ form.hidden_tag() }}
                         <div class="form-row">
                             {{ form.teamname.label(class="name") }}
                             <div class="value">
@@ -349,11 +359,26 @@
         }
     }
     function destruction(){
-        t1.parentNode.removeChild(t1)
-        t2.parentNode.removeChild(t2)
-        thS.parentNode.removeChild(thS)
-        thM.parentNode.removeChild(thM)
-        thE.parentNode.removeChild(thE)
+        if(t1.style.display == "none")
+        {
+            t1.parentNode.removeChild(t1)
+        }
+        if(t2.style.display == "none")
+        {
+            t2.parentNode.removeChild(t1)
+        }
+        if(thS.style.display == "none")
+        {
+            thS.parentNode.removeChild(t1)
+        }
+        if(thM.style.display == "none")
+        {
+            thM.parentNode.removeChild(t1)
+        }
+        if(thE.style.display == "none")
+        {
+            thE.parentNode.removeChild(t1)
+        }
     }
 });
 particlesJS("particles-js", {
