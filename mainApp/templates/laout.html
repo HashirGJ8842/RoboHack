@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags-->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Colorlib Templates">
+    <meta name="author" content="Colorlib">
+    <meta name="keywords" content="Colorlib Templates">
+
+    <!-- Title Page-->
+    <title>Au Register Forms by Colorlib</title>
+
+    <!-- Icons font CSS-->
+    <link href="static/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="static/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <!-- Font special for pages-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i" rel="stylesheet">
+
+    <!-- Vendor CSS-->
+    <link href="static/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="static/vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+
+    <!-- Main CSS-->
+    <link href="static/css/main.css" rel="stylesheet" media="all">
+</head>
+
+<body>
+    <div class="page-wrapper bg-gra-03 p-t-45 p-b-50">
+        <div class="wrapper wrapper--w790">
+            <div class="card card-5">
+                <div class="card-heading">
+                    <h2 class="title">Event Registration Form</h2>
+                </div>
+                <div class="card-body">
+                    <form method="POST">
+                        <div class="form-row">
+                            {{ form.teamname.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    {% if form.teamname.errors %}
+                                {{ form.teamname(class="input--style-5") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.teamname.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.teamname(class="input--style-5") }}
+                            {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            {{ form.teamCaptain.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    {% if form.teamCaptain.errors %}
+                                {{ form.teamCaptain(class="input--style-5") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.teamCaptain.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.teamCaptain(class="input--style-5") }}
+                            {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            {{ form.teamSize.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {% if form.teamSize.errors %}
+                                {{ form.teamSize(class="input--style-5", id="teamSize") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.teamSize.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.teamSize(class="input--style-5", id="teamSize") }}
+                            {% endif %}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="team1">
+                            {{ form.teamMember_1.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    {% if form.teamMember_1.errors %}
+                                {{ form.teamMember_1(class="input--style-5") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.teamMember_1.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.teamMember_1(class="input--style-5") }}
+                            {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="team2">
+                            {{ form.teamMember_2.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    {% if form.teamMember_2.errors %}
+                                {{ form.teamMember_2(class="input--style-5") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.teamMember_2.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.teamMember_2(class="input--style-5") }}
+                            {% endif %}
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            {{ form.themes.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {% if form.themes.errors %}
+                                {{ form.themes(class="input--style-5", id="themes") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.themes.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.themes(class="input--style-5", id="themes") }}
+                            {% endif %}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                        {{ form.recaptcha(class="form-control form-control-lg") }}
+                        </div>
+                        <div class="form-group">
+                {{ form.submit(class="btn btn--radius-2 btn--red",id="submit") }}
+            </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Jquery JS-->
+    <script src="static/vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="static/vendor/select2/select2.min.js"></script>
+    <script src="static/vendor/datepicker/moment.min.js"></script>
+    <script src="static/vendor/datepicker/daterangepicker.js"></script>
+
+    <!-- Main JS-->
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', () => {
+    console.log("Hi there")
+    const t1 = document.querySelector('#team1')
+    const t2 = document.querySelector('#team2')
+
+    t1.style.display = "none"
+    t2.style.display = "none"
+
+    document.addEventListener('click',event => {
+
+        if (event.target.id === "teamSize"){
+            loadTemplate()
+        }
+        if (event.target.id === "submit"){
+            destruction()
+        }
+    });
+
+
+    function loadTemplate(){
+
+        const size = document.querySelector('#teamSize').value
+        console.log(size)
+        if (size == 1){
+            t1.style.display = "none"
+            t2.style.display = "none"
+        }
+        else if(size == 2){
+            t1.style.display = "block"
+            t2.style.display = "none"
+        }
+        else if(size == 3){
+            t1.style.display = "block"
+            t2.style.display = "block"
+        }
+    }
+    function destruction(){
+        t1.parentNode.removeChild(t1)
+        t2.parentNode.removeChild(t2)
+    }
+});
+    </script>
+
+</body><!-- This templates was made by Colorlib (https://colorlib.com) -->
+
+</html>
