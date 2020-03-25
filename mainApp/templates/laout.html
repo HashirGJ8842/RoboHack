@@ -37,7 +37,6 @@
 
 <body>
 
-
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
   <a class="navbar-brand" href="#">Navbar</a>
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -62,25 +61,29 @@
       </li>
     </ul>
      </div>
-    </nav>        
-    <div class="page-wrapper bg-dark p-t-45 p-b-50">
-    <div id = "particles-js">
-        <div class = "container">
-            <div class="jumbotron">
+    </nav>   
+    <div style="position: fixed; width: 100%; height: 100%;" id                                    ="particles-js"></div>
+    <div class="page-wrapper p-t-45 p-b-50" style="background: #000000">
+
+    
+        
+        <div class="wrapper wrapper--w790">
+            <div class="card" style="color:rgb(0.2)">
+             <div class="jumbotron bg-transparent">
                 <h1 class="display-4">ROBO-HACK 1.0</h1>
-                <p class="lead">This is an online event organized by <a href="amuroboclub.in">AMURoboclub</a> to </p>            
+                <p class="lead">This is an online event organized by <a href="amuroboclub.in">AMURoboclub</a> to bring out the techie in you.
+                We aim to make the best use of quarantine, so invest your time in improving your skills and developing a real-life project.  </p>     
+                <br />
+                <strong>Registration Deadline : 27 March 2020 </strong>>
                 <hr class="my-4">           
-                <p><strong>SOFTWARE EDITION | ELECTRONICS/EMBEDDED EDITION | MECHANICAL DESIGN EDITION </strong></p> <br />
-                <a class="btn btn-warning btn-right" href="#" role="button">REGISTER</a>
+                <p style="align-content: center"><strong>SOFTWARE EDITION | ELECTRONICS/EMBEDDED EDITION | MECHANICAL DESIGN EDITION </strong></p> <br />
+                <a class="btn btn-warning btn-right" href="#" role="button">Register Now</a>
                  <a class="btn btn-warning btn-right" href="#" role="button">Organizing Team</a>
             </div>
         </div>
-    </div>
 
-        <hr /> <br />
-        <div class="wrapper wrapper--w790">
-      
-           
+        <br />
+        <br/>
             <div class="card card-5">
                 <div class="card-heading">
                     <h2 class="title">Event Registration Form</h2>
@@ -265,10 +268,11 @@
                 </div>
             
             </div>
-
+</div>
         </div>
     </div>
 </div>
+
 
     <!-- Jquery JS-->
     <script src="static/vendor/jquery/jquery.min.js"></script>
@@ -362,16 +366,16 @@ particlesJS("particles-js", {
       }
     },
     "color": {
-      "value": "#000000"
+      "value": "#FF4500"
     },
     "shape": {
       "type": "circle",
       "stroke": {
-        "width": 0,
-        "color": "#000000"
+        "width": 1,
+        "color": "#FF4500"
       },
       "polygon": {
-        "nb_sides": 5
+        "nb_sides": 4
       },
     },
     "opacity": {
@@ -389,7 +393,7 @@ particlesJS("particles-js", {
       "random": true,
       "anim": {
         "enable": false,
-        "speed": 10,
+        "speed": 15,
         "size_min": 0.1,
         "sync": false
       }
@@ -404,7 +408,7 @@ particlesJS("particles-js", {
     "move": {
       "enable": true,
       "speed": 2,
-      "direction": "none",
+      "direction": "attract",
       "random": false,
       "straight": false,
       "out_mode": "out",
