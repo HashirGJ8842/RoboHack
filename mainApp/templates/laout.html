@@ -173,19 +173,79 @@
                             </div>
                         </div>
                         <div class="form-row">
-                            {{ form.themes.label(class="name") }}
+                            {{ form.type.label(class="name") }}
                             <div class="value">
                                 <div class="input-group">
                                     <div class="rs-select2 js-select-simple select--no-search">
-                                        {% if form.themes.errors %}
-                                {{ form.themes(class="input--style-5", id="themes") }}
+                                        {% if form.type.errors %}
+                                {{ form.type(class="input--style-5", id="type") }}
                                 <div class="invalid-feedback">
-                                    {% for error in form.themes.errors %}
+                                    {% for error in form.type.errors %}
                                         <span>{{ error }}</span>
                                     {% endfor %}
                                 </div>
                             {% else %}
-                                {{ form.themes(class="input--style-5", id="themes") }}
+                                {{ form.type(class="input--style-5", id="type") }}
+                            {% endif %}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="themeS">
+                            {{ form.themesS.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {% if form.themesS.errors %}
+                                {{ form.themesS(class="input--style-5") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.themesS.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.themesS(class="input--style-5") }}
+                            {% endif %}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="themeE">
+                            {{ form.themesE.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {% if form.themesE.errors %}
+                                {{ form.themeE(class="input--style-5") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.themesE.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.themesE(class="input--style-5") }}
+                            {% endif %}
+                                        <div class="select-dropdown"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row" id="themeM">
+                            {{ form.themesM.label(class="name") }}
+                            <div class="value">
+                                <div class="input-group">
+                                    <div class="rs-select2 js-select-simple select--no-search">
+                                        {% if form.themesM.errors %}
+                                {{ form.themesM(class="input--style-5") }}
+                                <div class="invalid-feedback">
+                                    {% for error in form.themesM.errors %}
+                                        <span>{{ error }}</span>
+                                    {% endfor %}
+                                </div>
+                            {% else %}
+                                {{ form.themesM(class="input--style-5") }}
                             {% endif %}
                                         <div class="select-dropdown"></div>
                                     </div>
@@ -220,22 +280,51 @@
     console.log("Hi there")
     const t1 = document.querySelector('#team1')
     const t2 = document.querySelector('#team2')
+    const thS = document.querySelector('#themeS')
+    const thM = document.querySelector('#themeM')
+    const thE = document.querySelector('#themeE')
 
+    thS.style.display = "none"
+    thM.style.display = "none"
+    thE.style.display = "none"
     t1.style.display = "none"
     t2.style.display = "none"
 
     document.addEventListener('click',event => {
 
         if (event.target.id === "teamSize"){
-            loadTemplate()
+            loadTemplateM()
         }
         if (event.target.id === "submit"){
             destruction()
         }
+        if (event.target.id === "type"){
+            loadTemplateT()
+        }
     });
 
+    function loadTemplateT(){
 
-    function loadTemplate(){
+        const type = document.querySelector('#type').value
+        console.log(type)
+        if (type == 'software'){
+            thS.style.display = "block"
+            thM.style.display = "none"
+            thE.style.display = "none"
+        }
+        else if (type == 'electronics'){
+            thE.style.display = "block"
+            thM.style.display = "none"
+            thS.style.display = "none"
+        }
+        else if (type == 'mechanical'){
+            thS.style.display = "none"
+            thM.style.display = "block"
+            thE.style.display = "none"
+        }
+    }
+
+    function loadTemplateM(){
 
         const size = document.querySelector('#teamSize').value
         console.log(size)
@@ -255,6 +344,9 @@
     function destruction(){
         t1.parentNode.removeChild(t1)
         t2.parentNode.removeChild(t2)
+        thS.parentNode.removeChild(thS)
+        thM.parentNode.removeChild(thM)
+        thE.parentNode.removeChild(thE)
     }
 });
 particlesJS("particles-js", {
