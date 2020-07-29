@@ -70,7 +70,7 @@ starlette==0.12.9
 toml==0.10.0
 typed-ast==1.4.0
 urllib3==1.25.7
-uvicorn==0.10.4
+uvicorn==0.11.7
 virtualenv==16.7.9
 virtualenvwrapper-win==1.2.6
 websockets==8.1
