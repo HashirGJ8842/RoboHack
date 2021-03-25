@@ -59,7 +59,7 @@ python-engineio==3.11.2
 python-printer-escpos==0.0.3
 python-socketio==4.4.0
 pyusb==1.0.2
-PyYAML==5.2
+PyYAML==5.4
 qrcode==6.1
 readchar==2.0.1
 requests==2.22.0
