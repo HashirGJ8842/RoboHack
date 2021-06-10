@@ -11,7 +11,7 @@ colorama==0.4.1
 dnspython==1.16.0
 email-validator==1.0.5
 face-recognition-models==0.3.0
-fastapi==0.42.0
+fastapi==0.65.2
 Flask==1.1.1
 Flask-Bcrypt==0.7.1
 Flask-Migrate==2.5.3
